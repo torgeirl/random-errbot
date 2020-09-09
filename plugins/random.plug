@@ -1,0 +1,9 @@
+[Core]
+Name = Random
+Module = random
+
+[Python]
+Version = 3
+
+[Documentation]
+Description = Plugin for coin flips, die rolls and other randomization tasks.

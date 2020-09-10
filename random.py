@@ -1,6 +1,7 @@
 import logging
 from random import choice, randint
 from re import match as re_match
+from time import sleep
 
 from errbot import BotPlugin, botcmd
 

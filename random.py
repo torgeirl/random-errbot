@@ -1,6 +1,6 @@
 import logging
 from random import choice, randint
-from re import match
+from re import match as re_match
 
 from errbot import BotPlugin, botcmd
 
@@ -21,7 +21,7 @@ class Random(BotPlugin):
     @botcmd
     def roll(self, msg, args):
         '''Rolls one or more dice with N sides; defaults to 1D6.'''
-        match = match(r'(?:(?P<number>\d+)d)?(?P<sides>\d+)?$', args)
+        match = re_match(r'(?:(?P<number>\d+)d)?(?P<sides>\d+)?$', args)
         if not match:
             yield 'Please supply a valid number sufficient for rolling.'
             return

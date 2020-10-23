@@ -29,8 +29,8 @@ Rolled 2 20-sided dice, and the result is...
 $ !wheel
 Yes
 
-$ !wheel Cat Dog
-Dog
+$ !wheel Flying "First strike" Trample
+First strike
 ```
 
 ## License

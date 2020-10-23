@@ -47,7 +47,5 @@ class Random(BotPlugin):
     def wheel(self, msg, args):
         '''Spin the wheel decider; defaults to Y/N.'''
         options = shlex_split(args)
-        if len(options) == 1:
-            return('Unable to spin the wheel with only one option!')
         logger.info('Running wheel decider for {}'.format(msg.frm))
         return choice(['Yes', 'No']) if len(options) == 0 else choice(options)

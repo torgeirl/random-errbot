@@ -1,6 +1,7 @@
 import logging
 from random import choice, randint
 from re import match as re_match
+from shlex import split as shlex_split
 from time import sleep
 
 from errbot import BotPlugin, botcmd
@@ -45,7 +46,7 @@ class Random(BotPlugin):
     @botcmd
     def wheel(self, msg, args):
         '''Spin the wheel decider; defaults to Y/N.'''
-        options = list(filter(None, args.split(' ')))
+        options = shlex_split(args)
         if len(options) == 1:
             return('Unable to spin the wheel with only one option!')
         logger.info('Running wheel decider for {}'.format(msg.frm))

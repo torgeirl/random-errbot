@@ -26,20 +26,27 @@ class Random(BotPlugin):
         if not match:
             yield 'Please supply a valid number sufficient for rolling.'
             return
-
         number = int(match.group('number') or 1)  # default to 1 die rolled
         sides = int(match.group('sides') or 6)  # default to 6 sides
-        logger.info('Rolling {}D{} for {}'.format(number, sides, msg.frm))
-
         if not 1 < sides <= 10**6:
             yield 'Please supply a valid number of sides.'
             return
         elif not 0 < number <= 100:
             yield 'Please supply a valid number of dice.'
             return
-
+        logger.info('Rolling {}D{} for {}'.format(number, sides, msg.frm))
         results = [str(randint(1, sides)) for _ in range(number)]
         roll_msg = 'Rolled {} {}-sided dice, and the result is...'
         yield roll_msg.format(number if number > 1 else 'a', sides)
         sleep(1)  #TODO is there a 'send_user_typing_pause()' equivalent for Errbot?
         yield '... {}!'.format(' '.join(results))
+
+
+    @botcmd
+    def wheel(self, msg, args):
+        '''Spin the wheel decider; defaults to Y/N.'''
+        options = list(filter(None, args.split(' ')))
+        if len(options) == 1:
+            return('Unable to spin the wheel with only one option!')
+        logger.info('Running wheel decider for {}'.format(msg.frm))
+        return choice(['Yes', 'No']) if len(options) == 0 else choice(options)

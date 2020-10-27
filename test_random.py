@@ -1,10 +1,6 @@
-import logging
-
 import random
 from errbot.backends.test import testbot
 from errbot import plugin_manager
-
-logging.basicConfig(level=logging.WARNING)
 
 class TestRandom(object):
     extra_plugin_dir = '.'

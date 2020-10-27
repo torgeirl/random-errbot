@@ -12,13 +12,11 @@ logger = logging.getLogger(__name__)
 class Random(BotPlugin):
     '''Plugin for coin flips, die rolls and other randomization tasks.'''
 
-
     @botcmd
     def coinflip(self, msg, args):
         '''Need to toss a coin in these cash-free times? Look no further.'''
         logger.info('Flipping coin for {}'.format(msg.frm))
         return choice(['HEADS!', 'TAILS!'])
-
 
     @botcmd
     def roll(self, msg, args):
@@ -39,9 +37,8 @@ class Random(BotPlugin):
         results = [str(randint(1, sides)) for _ in range(number)]
         roll_msg = 'Rolled {} {}-sided dice, and the result is...'
         yield roll_msg.format(number if number > 1 else 'a', sides)
-        sleep(1)  #TODO is there a 'send_user_typing_pause()' equivalent for Errbot?
+        sleep(1) # TODO is there a 'send_user_typing_pause()' equivalent for Errbot?
         yield '... {}!'.format(' '.join(results))
-
 
     @botcmd
     def wheel(self, msg, args):

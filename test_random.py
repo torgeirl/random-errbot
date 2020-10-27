@@ -2,6 +2,7 @@ import random
 from errbot.backends.test import testbot
 from errbot import plugin_manager
 
+
 class TestRandom(object):
     extra_plugin_dir = '.'
 
@@ -10,8 +11,8 @@ class TestRandom(object):
         result = testbot.pop_message()
         assert(result == 'HEADS!' or result == 'TAILS!')
 
-    #def test_roll(self, testbot):
-        #TODO 
+    def test_roll(self, testbot):
+        pass # TODO
 
     def test_wheel(self, testbot):
         testbot.push_message('!wheel')

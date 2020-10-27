@@ -7,12 +7,15 @@ class TestRandom(object):
 
     def test_coinflip(self, testbot):
         testbot.push_message('!coinflip')
-        assertIn(testbot.pop_message(), ['HEADS!', 'TAILS!'])
+        result = testbot.pop_message()
+        assert(result == 'HEADS!' or result == 'TAILS!')
 
     def test_roll(self, testbot):
-        testbot.push_message('!roll')
-        assertIn(testbot.pop_message(), ['1', '2', '3', '4', '5', '6'])
+        testbot.push_message('!roll 1d2')
+        result = testbot.pop_message()
+        assert(result == '1' or result == '2')
 
     def test_wheel(self, testbot):
         testbot.push_message('!wheel')
-        assertIn(testbot.pop_message(), ['Yes', 'No'])
+        result = testbot.pop_message()
+        assert(result == 'Yes' or result == 'No')

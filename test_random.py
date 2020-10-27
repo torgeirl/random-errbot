@@ -10,12 +10,8 @@ class TestRandom(object):
         result = testbot.pop_message()
         assert(result == 'HEADS!' or result == 'TAILS!')
 
-    def test_roll(self, testbot):
-        testbot.push_message('!roll 1d2')
-        assert('Rolled a 2-sided dice, and the result is...' \ 
-               in testbot.pop_message())
-        result = testbot.pop_message()
-        assert(result == '1' or result == '2')
+    #def test_roll(self, testbot):
+        #TODO 
 
     def test_wheel(self, testbot):
         testbot.push_message('!wheel')

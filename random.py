@@ -16,7 +16,7 @@ class Random(BotPlugin):
     @botcmd
     def coinflip(self, msg, args):
         '''Need to toss a coin in these cash-free times? Look no further.'''
-        #logger.info('Flipping coin for {}'.format(msg.frm))
+        logger.info('Flipping coin for {}'.format(msg.frm))
         return choice(['HEADS!', 'TAILS!'])
 
 
@@ -35,7 +35,7 @@ class Random(BotPlugin):
         elif not 0 < number <= 100:
             yield 'Please supply a valid number of dice.'
             return
-        #logger.info('Rolling {}D{} for {}'.format(number, sides, msg.frm))
+        logger.info('Rolling {}D{} for {}'.format(number, sides, msg.frm))
         results = [str(randint(1, sides)) for _ in range(number)]
         roll_msg = 'Rolled {} {}-sided dice, and the result is...'
         yield roll_msg.format(number if number > 1 else 'a', sides)
@@ -47,5 +47,5 @@ class Random(BotPlugin):
     def wheel(self, msg, args):
         '''Spin the wheel decider; defaults to Y/N.'''
         options = shlex_split(args)
-        #logger.info('Running wheel decider for {}'.format(msg.frm))
+        logger.info('Running wheel decider for {}'.format(msg.frm))
         return choice(['Yes', 'No']) if len(options) == 0 else choice(options)

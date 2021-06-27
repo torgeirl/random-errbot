@@ -13,7 +13,8 @@ class TestRandom(object):
 
     def test_roll(self, testbot):
         testbot.push_message('!roll')
-        result = testbot.pop_message()
+        testbot.pop_message() # discard roll's start message
+        result = testbot.pop_message().partition('... ')[2].partition('!')[0]
         assert(result == '1' or result == '2' or result == '3' or \
                result == '4' or result == '5' or result == '6')
 

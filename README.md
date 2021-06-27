@@ -20,6 +20,9 @@ Run `!help Plugins` to get instructions on `!repo uninstall`, `!repo update` and
 $ !coinflip
 TAILS!
 
+$ !eightball
+Yes definitely.
+
 $ !roll
 Rolled a 6-sided dice, and the result is...
 ... 4!

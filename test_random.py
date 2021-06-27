@@ -12,7 +12,8 @@ class TestRandom(object):
         assert(result == 'HEADS!' or result == 'TAILS!')
 
     def test_roll(self, testbot):
-        pass # TODO
+        assert(result == '1' or result == '2' or result == '3' or 
+               result == '4' or result == '5' or result == '6')
 
     def test_wheel(self, testbot):
         testbot.push_message('!wheel')

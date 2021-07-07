@@ -1,7 +1,7 @@
 random-errbot
 =============
 
-[![Python package](https://github.com/torgeirl/random-errbot/actions/workflows/python-tests.yml/badge.svg?branch=master)](https://github.com/torgeirl/random-errbot/actions/workflows/python-tests.yml)
+[![Errbot plugin](https://github.com/torgeirl/random-errbot/actions/workflows/python-tests.yml/badge.svg?branch=master)](https://github.com/torgeirl/random-errbot/actions/workflows/python-tests.yml)
 
 ## Overview
 An [Errbot](https://github.com/errbotio/errbot) plugin for coin flips, die rolls and other randomization tasks.

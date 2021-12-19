@@ -53,7 +53,7 @@ class Random(BotPlugin):
         results = [str(randint(1, sides)) for _ in range(number)]
         roll_msg = 'Rolled {} {}-sided dice, and the result is...'
         yield roll_msg.format(number if number > 1 else 'a', sides)
-        sleep(1) # TODO is there a 'send_user_typing_pause()' equivalent for Errbot?
+        sleep(1)  # TODO is there a 'send_user_typing_pause()' equivalent for Errbot?
         yield '... {}!'.format(' '.join(results))
 
     @botcmd

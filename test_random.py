@@ -11,6 +11,11 @@ class TestRandom(object):
         result = testbot.pop_message()
         assert(result == 'HEADS!' or result == 'TAILS!')
 
+    def test_eightball(self, testbot):
+        testbot.push_message('!eightball')
+        assert(type(result) is str) # just tests that it runs OK
+
+
     def test_roll(self, testbot):
         testbot.push_message('!roll')
         testbot.pop_message() # discard roll's start message

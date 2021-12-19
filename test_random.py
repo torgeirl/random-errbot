@@ -13,7 +13,8 @@ class TestRandom(object):
 
     def test_eightball(self, testbot):
         testbot.push_message('!eightball')
-        assert(type(result) is str) # just tests that it runs OK
+        result = testbot.pop_message()
+        assert(type(result) is str) # this only tests that command runs OK
 
 
     def test_roll(self, testbot):
